@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Filter from "./components/filter";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <h1>Hello</h1>
-        <h2>world</h2>
+        <Filter />
       </>
     );
   }

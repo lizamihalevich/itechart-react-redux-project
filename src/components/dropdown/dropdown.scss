@@ -1,0 +1,11 @@
+.dropdown {
+  &__panel {
+    display: block;
+    width: 200px;
+    height: 100px;
+    background-color: grey;
+    &_hidden {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.panelOffset {
+  display: flex;
+  border-bottom: 1px solid white;
+  &__offset {
+    width: 30px;
+    background-color: #666;
+  }
+}
