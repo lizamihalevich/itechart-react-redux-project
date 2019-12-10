@@ -1,0 +1,14 @@
+.bodyComponent {
+  display: flex;
+  align-items: center;
+
+  &__info {
+    width: 30%;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2178c4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

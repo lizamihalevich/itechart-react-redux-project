@@ -1,11 +1,24 @@
 .dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
   &__panel {
     display: block;
-    width: 200px;
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    z-index: 5;
+    width: 300px;
     height: 100px;
-    background-color: grey;
+    background-color: #383838;
+    border: 1px solid #999;
+    border-top: 5px solid #2178c4;
     &_hidden {
       display: none;
     }
+  }
+  &__icon {
+    margin: 0 15px;
+    font-size: 12px;
   }
 }

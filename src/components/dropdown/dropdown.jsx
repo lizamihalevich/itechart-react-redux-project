@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import './dropdown.scss';
 
 export default class Dropdown extends React.Component {
@@ -25,7 +25,8 @@ export default class Dropdown extends React.Component {
     return (
       <div className="dropdown">
         <FontAwesomeIcon
-          icon={faChevronDown}
+          className="dropdown__icon"
+          icon={isChevronClicked ? faChevronUp : faChevronDown}
           onClick={() => this.handleChevronClick()}
         />
         <Header text={text} />

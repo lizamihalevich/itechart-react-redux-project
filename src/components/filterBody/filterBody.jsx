@@ -1,13 +1,17 @@
 import React from 'react';
-import Dropdown from '../dropdown';
+import FilterBodyComponent from '../filterBodyComponent';
+import Search from '../search';
+import './filterBody.scss';
 
 export default class FilterBody extends React.Component {
   render() {
+    const filterInfo = 'FilterInfo random text random text random text';
     return (
-      <>
-        <Dropdown text="Contexts" />
-        <Dropdown text="Dimensions" />
-      </>
+      <div className="filterBody">
+        <FilterBodyComponent filterName="Contexts" filterInfo={filterInfo} />
+        <FilterBodyComponent filterName="Dimensions" filterInfo={filterInfo} />
+        <Search />
+      </div>
     );
   }
 }

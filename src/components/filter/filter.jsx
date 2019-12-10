@@ -1,8 +1,7 @@
 import React from 'react';
 import FilterHeader from '../filterHeader';
-
-import './filter.scss';
 import FilterBody from '../filterBody';
+import './filter.scss';
 
 export default class Filter extends React.Component {
   render() {

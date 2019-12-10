@@ -1,0 +1,19 @@
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(20, 20, 20, 0.65);
+  align-items: center;
+  border-bottom: 3px solid #2178c4;
+  &__drag-icon {
+    font-size: 20px;
+    color: #888;
+  }
+  &__close-icon {
+    font-size: 15px;
+    color: #888;
+  }
+  &__text {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
