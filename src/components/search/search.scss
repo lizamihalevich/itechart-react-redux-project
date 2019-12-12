@@ -1,0 +1,10 @@
+.search {
+  border-bottom: 1px solid #888;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 90%;
+  &__buttons {
+    margin-left: 26px;
+    margin-bottom: 20px;
+  }
+}

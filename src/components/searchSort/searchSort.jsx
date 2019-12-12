@@ -1,4 +1,5 @@
 import React from 'react';
+import './searchSort.scss';
 
 export default class SearchSort extends React.Component {
   render() {

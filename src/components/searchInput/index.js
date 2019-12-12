@@ -1,3 +1,3 @@
-import SearchInput from 'react';
+import SearchInput from './searchInput';
 
 export default SearchInput;

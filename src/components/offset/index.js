@@ -1,3 +1,3 @@
-import Offset from './offset';
+import PanelOffset from './offset';
 
-export default Offset;
+export default PanelOffset;

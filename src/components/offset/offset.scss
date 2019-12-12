@@ -1,10 +1,10 @@
 .panelOffset {
   display: flex;
   border-bottom: 2px solid #888;
+
   &__offset {
-    flex-shrink: 0;
-    width: 50px;
-    background-color: #666;
+    width: 12%;
+    background-color: rgba(68, 68, 68, 0.904);
     border-right: 2px solid #888;
   }
 }

@@ -1,3 +1,7 @@
 .filterBody {
-  background-color: #383838;
+  &__component {
+    &_search {
+      flex-direction: column;
+    }
+  }
 }

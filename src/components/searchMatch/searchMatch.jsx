@@ -3,6 +3,12 @@ import './searchMatch.scss';
 
 export default class searchMatch extends React.Component {
   render() {
-    return <div className="searchMatch"></div>;
+    return (
+      <select className="searchMatch">
+        <option className="searchMatch__option">.</option>
+        <option className="searchMatch__option">.</option>
+        <option className="searchMatch__option">.</option>
+      </select>
+    );
   }
 }

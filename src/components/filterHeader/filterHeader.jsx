@@ -10,8 +10,8 @@ export default class FilterHeader extends React.Component {
     return (
       <div className="filterHeader">
         <FontAwesomeIcon className="filterHeader__drag-icon" icon={faBars} />
-        <Header className="filterHeader__text" text={text} />
-        <FontAwesomeIcon className="filterheader__close-icon" icon={faTimes} />
+        <Header text={text} />
+        <FontAwesomeIcon className="filterHeader__close-icon" icon={faTimes} />
       </div>
     );
   }

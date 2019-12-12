@@ -1,0 +1,10 @@
+.listItem {
+  &__checkbox {
+    background-color: #666;
+  }
+  &__name {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+}

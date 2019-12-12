@@ -2,6 +2,9 @@ import React from 'react';
 import FilterBodyComponent from '../filterBodyComponent';
 import Search from '../search';
 import './filterBody.scss';
+import SearchList from '../searchList/searchList';
+import Footer from '../footer/footer';
+import PanelOffset from '../offset';
 
 export default class FilterBody extends React.Component {
   render() {
@@ -10,7 +13,13 @@ export default class FilterBody extends React.Component {
       <div className="filterBody">
         <FilterBodyComponent filterName="Contexts" filterInfo={filterInfo} />
         <FilterBodyComponent filterName="Dimensions" filterInfo={filterInfo} />
-        <Search />
+        <FilterBodyComponent className="filterBody__component_search">
+          <Search />
+          <SearchList />
+        </FilterBodyComponent>
+        <PanelOffset>
+          <Footer />
+        </PanelOffset>
       </div>
     );
   }
