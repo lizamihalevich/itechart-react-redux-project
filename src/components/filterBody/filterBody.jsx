@@ -1,22 +1,24 @@
 import React from 'react';
-import FilterBodyComponent from '../filterBodyComponent';
+
+import FilterBodyElement from '../filterBodyElement';
 import Search from '../search';
-import './filterBody.scss';
 import SearchList from '../searchList/searchList';
 import Footer from '../footer/footer';
 import PanelOffset from '../offset';
+
+import './filterBody.scss';
 
 export default class FilterBody extends React.Component {
   render() {
     const filterInfo = 'FilterInfo random text random text random text';
     return (
-      <div className="filterBody">
-        <FilterBodyComponent filterName="Contexts" filterInfo={filterInfo} />
-        <FilterBodyComponent filterName="Dimensions" filterInfo={filterInfo} />
-        <FilterBodyComponent className="filterBody__component_search">
+      <div className="filter-body">
+        <FilterBodyElement filterName="Contexts" filterInfo={filterInfo} />
+        <FilterBodyElement filterName="Dimensions" filterInfo={filterInfo} />
+        <FilterBodyElement>
           <Search />
           <SearchList />
-        </FilterBodyComponent>
+        </FilterBodyElement>
         <PanelOffset>
           <Footer />
         </PanelOffset>

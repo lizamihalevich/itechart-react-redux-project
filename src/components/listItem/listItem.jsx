@@ -1,13 +1,21 @@
 import React from 'react';
+
+import ListItemCheckbox from '../listItemCheckbox';
+
 import './listItem.scss';
 
 export default class ListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { name } = this.props;
+
     return (
-      <div className="listItem">
-        <input className="listItem__checkbox" type="checkbox" />
-        <span className="listItem__name">{name}</span>
+      <div className="list-item">
+        <ListItemCheckbox />
+        <span className="list-item__name">{name}</span>
       </div>
     );
   }

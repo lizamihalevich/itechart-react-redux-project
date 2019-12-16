@@ -1,7 +1,10 @@
 import React from 'react';
+
 import Header from '../header';
+import ListItem from '../listItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
 import './dropdown.scss';
 
 export default class Dropdown extends React.Component {
@@ -34,7 +37,14 @@ export default class Dropdown extends React.Component {
           className={
             isChevronClicked ? 'dropdown__panel' : 'dropdown__panel_hidden'
           }
-        ></div>
+        >
+          <ListItem name="test1" />
+          <ListItem name="test2" />
+          <ListItem name="test3" />
+          <ListItem name="test1" />
+          <ListItem name="test2" />
+          <ListItem name="test3" />
+        </div>
       </div>
     );
   }

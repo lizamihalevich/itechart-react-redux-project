@@ -1,13 +1,14 @@
-.bodyComponent {
+$offset: 50px;
+
+.filter-body-element {
   display: flex;
   align-items: center;
   background-color: #444;
-  overflow-x: hidden;
-  width: 100%;
+  width: calc(100% - #{$offset});
   &_col {
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: calc(100% - #{$offset});
   }
 
   &__info {

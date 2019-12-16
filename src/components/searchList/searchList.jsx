@@ -1,5 +1,7 @@
 import React from 'react';
+
 import ListItem from '../listItem';
+
 import './searchList.scss';
 
 export default class SearchList extends React.Component {
@@ -9,10 +11,10 @@ export default class SearchList extends React.Component {
 
   render() {
     return (
-      <ul className="searchList">
-        <ListItem className="searchList__item" name="test1" />
-        <ListItem className="searchList__item" name="test2" />
-        <ListItem className="searchList__item" name="test3" />
+      <ul className="search-list">
+        <ListItem className="search-list__item" name="test1" />
+        <ListItem className="search-list__item" name="test2" />
+        <ListItem className="search-list__item" name="test3" />
       </ul>
     );
   }

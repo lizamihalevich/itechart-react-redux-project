@@ -10,7 +10,7 @@
     "quotes": [2, "single"],
     "prettier/prettier": "error"
   },
-  "plugins": ["prettier"],
+  "plugins": ["jsx-a11y", "prettier"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
