@@ -1,0 +1,21 @@
+.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  &__panel {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    z-index: 1;
+    width: 300px;
+    background-color: #383838;
+    border: 1px solid #999;
+    border-top: 5px solid #2178c4;
+    padding-left: 10px;
+  }
+  &__icon {
+    margin: 0 15px;
+    font-size: 12px;
+  }
+}

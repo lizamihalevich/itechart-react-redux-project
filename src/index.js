@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Filter from "./components/filter";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Filter from './features/FiltersWidget';
 
 class App extends React.Component {
   render() {
@@ -12,4 +12,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));
