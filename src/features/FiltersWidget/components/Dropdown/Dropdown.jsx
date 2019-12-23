@@ -16,7 +16,7 @@ export default class Dropdown extends React.PureComponent {
     };
   }
 
-  handleChevronClick = () => {
+  handleClick = () => {
     this.setState(state => ({
       isOpened: !state.isOpened
     }));
@@ -31,9 +31,12 @@ export default class Dropdown extends React.PureComponent {
         <FontAwesomeIcon
           className="dropdown__icon"
           icon={isOpened ? faChevronUp : faChevronDown}
-          onClick={this.handleChevronClick}
+          onClick={this.handleClick}
         />
-        <Header header={header} />
+        <Header 
+          onClick={this.handleClick} 
+          header={header} 
+        />
 
         {isOpened && (
           <div className="dropdown__panel">

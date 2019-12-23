@@ -5,8 +5,8 @@ import './Header.scss';
 
 export default class Header extends React.PureComponent {
   render() {
-    const { header } = this.props;
-    return <h2 className="header-text">{header}</h2>;
+    const { header, onClick } = this.props;
+  return <h2 className="header-text" onClick={onClick}>{header}</h2>;
   }
 }
 
