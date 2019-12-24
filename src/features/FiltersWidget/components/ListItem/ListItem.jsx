@@ -42,5 +42,5 @@ export default class ListItem extends React.PureComponent {
 }
 
 ListItem.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string.isRequired
 };

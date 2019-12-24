@@ -21,5 +21,5 @@ export default class FilterHeader extends React.PureComponent {
 }
 
 FilterHeader.propTypes = {
-  header: PropTypes.string
+  header: PropTypes.string.isRequired
 };

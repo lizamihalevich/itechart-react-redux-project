@@ -32,5 +32,5 @@ export default class ListItemCheckbox extends React.PureComponent {
 }
 
 ListItemCheckbox.propTypes = {
-  checked: PropTypes.bool
+  checked: PropTypes.bool.isRequired
 };

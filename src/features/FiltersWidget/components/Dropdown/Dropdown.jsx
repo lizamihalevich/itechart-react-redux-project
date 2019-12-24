@@ -33,10 +33,7 @@ export default class Dropdown extends React.PureComponent {
           icon={isOpened ? faChevronUp : faChevronDown}
           onClick={this.handleClick}
         />
-        <Header 
-          onClick={this.handleClick} 
-          header={header} 
-        />
+        <Header onClick={this.handleClick} header={header} />
 
         {isOpened && (
           <div className="dropdown__panel">
@@ -52,6 +49,10 @@ export default class Dropdown extends React.PureComponent {
     );
   }
 }
+
+Dropdown.defaultProps = {
+  header: ''
+};
 
 Dropdown.propTypes = {
   header: PropTypes.string

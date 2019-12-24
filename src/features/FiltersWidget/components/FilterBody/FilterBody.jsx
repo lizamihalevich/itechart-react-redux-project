@@ -1,19 +1,20 @@
 import React from 'react';
 
-import FilterBodyElement from '../FilterBodyElement';
 import Footer from '../Footer/Footer';
 import PanelOffset from '../Offset';
+import FilterBodyDropdown from '../FilterBodyDropdown';
 
 import './FilterBody.scss';
+import FilterBodySearchList from '../FilterBodySearchList';
 
 export default class FilterBody extends React.PureComponent {
   render() {
     const filterInfo = 'FilterInfo random text random text random text';
     return (
       <div className="filter-body">
-        <FilterBodyElement filterName="Contexts" filterInfo={filterInfo} />
-        <FilterBodyElement filterName="Dimensions" filterInfo={filterInfo} />
-        <FilterBodyElement></FilterBodyElement>
+        <FilterBodyDropdown filterName="Contexts" filterInfo={filterInfo} />
+        <FilterBodyDropdown filterName="Dimensions" filterInfo={filterInfo} />
+        <FilterBodySearchList />
         <PanelOffset>
           <Footer />
         </PanelOffset>
