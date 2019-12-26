@@ -18,3 +18,7 @@ export default class PanelOffset extends React.PureComponent {
     );
   }
 }
+
+PanelOffset.defaultProps = {
+  className: ''
+};

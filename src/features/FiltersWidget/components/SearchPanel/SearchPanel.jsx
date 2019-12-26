@@ -22,3 +22,7 @@ export default class SearchPanel extends React.PureComponent {
     );
   }
 }
+
+SearchPanel.defaultProps = {
+  className: ''
+};

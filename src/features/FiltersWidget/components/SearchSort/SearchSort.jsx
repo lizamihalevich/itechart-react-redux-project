@@ -13,3 +13,8 @@ export default class SearchSort extends React.PureComponent {
     return <button className={searchSortClassName}>{range}</button>;
   }
 }
+
+Search.defaultProps = {
+  range: 'A-Z',
+  className: ''
+};

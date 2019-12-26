@@ -12,3 +12,7 @@ export default class SearchInput extends React.PureComponent {
     return <input className={inputClassName} type="text" />;
   }
 }
+
+SearchInput.defaultProps = {
+  className: ''
+};

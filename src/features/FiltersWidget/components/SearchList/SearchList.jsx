@@ -21,3 +21,7 @@ export default class SearchList extends React.PureComponent {
     );
   }
 }
+
+SearchList.defaultProps = {
+  className: ''
+};

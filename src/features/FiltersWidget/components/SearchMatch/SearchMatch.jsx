@@ -19,3 +19,7 @@ export default class searchMatch extends React.PureComponent {
     );
   }
 }
+
+SearchMatch.defaultProps = {
+  className: ''
+};

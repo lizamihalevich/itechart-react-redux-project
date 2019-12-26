@@ -24,3 +24,7 @@ export default class Search extends React.PureComponent {
     );
   }
 }
+
+Search.defaultProps = {
+  className: ''
+};
