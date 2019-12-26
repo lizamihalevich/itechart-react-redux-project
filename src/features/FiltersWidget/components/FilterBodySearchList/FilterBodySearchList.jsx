@@ -10,8 +10,8 @@ export default class FilterBodySearchList extends React.PureComponent {
     return (
       <PanelOffset>
         <div className="filter-body-element-list">
-          <Search />
-          <SearchList />
+          <Search className="filter-body-element-list__search" />
+          <SearchList className="filter-body-element-list__search-list" />
         </div>
       </PanelOffset>
     );

@@ -8,10 +8,6 @@ import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
 import './ListItemCheckbox.scss';
 
 export default class ListItemCheckbox extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { checked } = this.props;
 

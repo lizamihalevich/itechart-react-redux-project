@@ -1,5 +1,6 @@
 import React from 'react';
 
+import classNames from 'classnames';
 import SearchPanel from '../SearchPanel';
 import SearchMatch from '../SearchMatch';
 import SearchSort from '../SearchSort';
@@ -8,12 +9,16 @@ import './Search.scss';
 
 export default class Search extends React.PureComponent {
   render() {
+    const { className } = this.props;
+    const searchClassName = classNames(className, {
+      search: true
+    });
     return (
-      <div className="search">
-        <SearchPanel />
+      <div className={searchClassName}>
+        <SearchPanel className="search__search-panel" />
         <div className="search__buttons">
-          <SearchMatch />
-          <SearchSort range="A-Z" />
+          <SearchMatch className="search__match" />
+          <SearchSort className="search__search-sort" range="A-Z" />
         </div>
       </div>
     );

@@ -1,10 +1,15 @@
 import React from 'react';
 
+import classNames from 'classnames';
 import './SearchSort.scss';
 
 export default class SearchSort extends React.PureComponent {
   render() {
-    const { range } = this.props;
-    return <button className="search-sort">{range}</button>;
+    const { range, className } = this.props;
+
+    const searchSortClassName = classNames(className, {
+      'search-sort': true
+    });
+    return <button className={searchSortClassName}>{range}</button>;
   }
 }

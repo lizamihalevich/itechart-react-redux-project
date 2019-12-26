@@ -1,12 +1,17 @@
 import React from 'react';
 
+import classNames from 'classnames';
 import './Offset.scss';
 
 export default class PanelOffset extends React.PureComponent {
   render() {
-    const { children } = this.props;
+    const { children, className } = this.props;
+
+    const panelOffsetClassName = classNames(className, {
+      'panel-offset': true
+    });
     return (
-      <div className="panel-offset">
+      <div className={panelOffsetClassName}>
         <div className="panel-offset__offset"></div>
         {children}
       </div>

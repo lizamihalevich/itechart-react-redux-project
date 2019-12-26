@@ -15,9 +15,7 @@ export default class FilterBody extends React.PureComponent {
         <FilterBodyDropdown filterName="Contexts" filterInfo={filterInfo} />
         <FilterBodyDropdown filterName="Dimensions" filterInfo={filterInfo} />
         <FilterBodySearchList />
-        <PanelOffset>
-          <Footer />
-        </PanelOffset>
+        <PanelOffset className="filter-body__footer"></PanelOffset>
       </div>
     );
   }

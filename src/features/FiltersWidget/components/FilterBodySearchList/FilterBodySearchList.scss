@@ -1,8 +1,18 @@
-$offset: 50px;
+@import '../../variables.scss';
 
 .filter-body-element-list {
   background-color: #444;
   flex-direction: column;
   align-items: center;
   width: calc(100% - #{$offset});
+
+  &__search {
+    margin: auto;
+    width: 90%;
+  }
+
+  &__search-list {
+    margin: 10px auto;
+    width: 90%;
+  }
 }

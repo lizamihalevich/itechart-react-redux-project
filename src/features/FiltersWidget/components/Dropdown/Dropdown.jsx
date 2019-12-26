@@ -9,12 +9,9 @@ import PropTypes from 'prop-types';
 import './Dropdown.scss';
 
 export default class Dropdown extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpened: false
-    };
-  }
+  state = {
+    isOpened: false
+  };
 
   handleClick = () => {
     this.setState(state => ({
@@ -33,7 +30,7 @@ export default class Dropdown extends React.PureComponent {
           icon={isOpened ? faChevronUp : faChevronDown}
           onClick={this.handleClick}
         />
-        <Header onClick={this.handleClick} header={header} />
+        <Header onClick={this.handleClick} headerTitle={header} />
 
         {isOpened && (
           <div className="dropdown__panel">
@@ -50,10 +47,10 @@ export default class Dropdown extends React.PureComponent {
   }
 }
 
-Dropdown.defaultProps = {
-  header: ''
-};
-
 Dropdown.propTypes = {
   header: PropTypes.string
+};
+
+Dropdown.defaultProps = {
+  header: ''
 };

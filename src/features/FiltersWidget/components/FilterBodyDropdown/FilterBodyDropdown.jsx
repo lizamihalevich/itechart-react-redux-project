@@ -7,9 +7,6 @@ import './FilterBodyDropdown.scss';
 import PanelOffset from '../Offset';
 
 export default class FilterBodyDropdown extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { filterName, filterInfo } = this.props;
     return (
@@ -23,12 +20,12 @@ export default class FilterBodyDropdown extends React.PureComponent {
   }
 }
 
-FilterBodyDropdown.defaultProps = {
-  filterName: 'filter',
-  filterInfo: ''
-};
-
 FilterBodyDropdown.propTypes = {
   filterName: PropTypes.string,
   filterInfo: PropTypes.string
+};
+
+FilterBodyDropdown.defaultProps = {
+  filterName: 'filter',
+  filterInfo: ''
 };

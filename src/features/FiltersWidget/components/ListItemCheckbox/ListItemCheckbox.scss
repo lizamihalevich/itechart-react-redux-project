@@ -5,17 +5,6 @@
     font-size: 20px;
     &_clicked {
       color: white;
-      font-size: 20px;
-    }
-  }
-  &__check {
-    font-size: 10px;
-    color: black;
-    position: absolute;
-    left: 4px;
-    top: 5px;
-    &_hidden {
-      display: none;
     }
   }
 }

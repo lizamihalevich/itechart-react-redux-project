@@ -6,12 +6,9 @@ import ListItemCheckbox from '../ListItemCheckbox';
 import './ListItem.scss';
 
 export default class ListItem extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: false
-    };
-  }
+  state = {
+    isChecked: false
+  };
 
   handleClick = () => {
     this.setState(state => ({

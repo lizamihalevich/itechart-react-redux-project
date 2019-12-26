@@ -4,11 +4,7 @@ import Filter from './features/FiltersWidget';
 
 class App extends React.Component {
   render() {
-    return (
-      <>
-        <Filter />
-      </>
-    );
+    return <Filter />;
   }
 }
 
