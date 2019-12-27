@@ -47,10 +47,10 @@ export default class Dropdown extends React.PureComponent {
   }
 }
 
-Dropdown.propTypes = {
-  header: PropTypes.string
-};
-
 Dropdown.defaultProps = {
   header: ''
+};
+
+Dropdown.propTypes = {
+  header: PropTypes.string
 };

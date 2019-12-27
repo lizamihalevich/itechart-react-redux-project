@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 import './SearchMatch.scss';
 
-export default class searchMatch extends React.PureComponent {
+export default class SearchMatch extends React.PureComponent {
   render() {
     const { className } = this.props;
 

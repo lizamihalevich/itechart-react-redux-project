@@ -14,7 +14,7 @@ export default class SearchSort extends React.PureComponent {
   }
 }
 
-Search.defaultProps = {
+SearchSort.defaultProps = {
   range: 'A-Z',
   className: ''
 };
