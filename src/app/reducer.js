@@ -1,22 +1,21 @@
 
-import { createAction, createReducer, combineReducers } from '@reduxjs/toolkit';
-import { getContexts } from './data';
+import { createReducer, combineReducers } from '@reduxjs/toolkit';
 
-const initialState = {};
-const setContexts = createAction('SET_CONTEXTS');
-const setDimensions = createAction('SET_DIMENSIONS');
+import { setContexts } from './actions';
 
-const contexts = createReducer(initialState, {
-  [setContexts]: Object.assign({}, state, {
-    contexts: getContexts()
+//let state = {};
+
+const contexts = createReducer([], {
+  [setContexts]: (state, action) => {
+    const contexts = action.payload
+    return [...state, ...contexts]
+  },
   })
   // [setDimensions]: Object.assign({}, state, {
   //   dimensions: getDimensions().map((dim, index) => {
   //     if (dim.contextId === )
   //   })
   // })
-});
-s;
 
 const rootReducer = combineReducers({
   contexts

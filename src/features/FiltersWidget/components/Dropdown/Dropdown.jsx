@@ -5,6 +5,7 @@ import ListItem from '../ListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 
 import './Dropdown.scss';
 
@@ -20,8 +21,12 @@ export default class Dropdown extends React.PureComponent {
   };
 
   render() {
-    const { header } = this.props;
+    const { header, items } = this.props;
     const { isOpened } = this.state;
+
+    const listItems = items.map((item) => {
+      return <ListItem name={item.title}/>
+    })
 
     return (
       <div className="dropdown">
@@ -34,18 +39,14 @@ export default class Dropdown extends React.PureComponent {
 
         {isOpened && (
           <div className="dropdown__panel">
-            <ListItem name="test1" />
-            <ListItem name="test2" />
-            <ListItem name="test3" />
-            <ListItem name="test1" />
-            <ListItem name="test2" />
-            <ListItem name="test3" />
+            {listItems}
           </div>
         )}
       </div>
     );
   }
 }
+
 
 Dropdown.defaultProps = {
   header: ''
