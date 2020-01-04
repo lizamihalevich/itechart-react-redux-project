@@ -1,7 +1,10 @@
-const initialState = {};
+import { combineReducers } from '@reduxjs/toolkit';
 
-function rootReducer(state = initialState, action) {
-  return state;
-}
+const rootReducer = combineReducers({});
+// const initialState = {};
+
+// function rootReducer(state = initialState, action) {
+//   return state;
+// }
 
 export default rootReducer;
