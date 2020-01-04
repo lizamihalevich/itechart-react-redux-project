@@ -12,8 +12,16 @@ class FilterBody extends React.PureComponent {
     const filterInfo = 'FilterInfo random text random text random text';
     return (
       <div className="filter-body">
-        <FilterBodyDropdown filterName="Contexts" filterInfo={filterInfo} items={this.props.contexts}/>
-        <FilterBodyDropdown filterName="Dimensions" filterInfo={filterInfo} items={this.props.contexts}/>
+        <FilterBodyDropdown
+          filterName="Contexts"
+          filterInfo={filterInfo}
+          items={this.props.contexts}
+        />
+        <FilterBodyDropdown
+          filterName="Dimensions"
+          filterInfo={filterInfo}
+          items={this.props.dimensions}
+        />
         <FilterBodySearchList />
         <PanelOffset className="filter-body__footer"></PanelOffset>
       </div>
@@ -22,7 +30,10 @@ class FilterBody extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
-  return { contexts: state.contexts };
+  return {
+    contexts: state.contexts,
+    dimensions: state.dimensions
+  };
 };
 
 export default connect(mapStateToProps)(FilterBody);

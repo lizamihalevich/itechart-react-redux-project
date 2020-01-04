@@ -21,12 +21,13 @@ export default class ListItem extends React.PureComponent {
   };
 
   render() {
-    const { name } = this.props;
+    const { name, key } = this.props;
     const { isChecked } = this.state;
 
     return (
       <div className="list-item" onClick={this.handleClick}>
         <ListItemCheckbox
+          key={key}
           checked={isChecked}
           onClick={this.handleCheckboxCLick}
         />

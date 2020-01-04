@@ -5,35 +5,35 @@
 export const getContexts = () => {
   return [
     {
-      contextId: 1,
+      id: 1,
       title: 'Context 1'
     },
     {
-      contextId: 2,
+      id: 2,
       title: 'Context 2'
     }
   ];
-}
+};
 
 export const getDimensions = () => {
   return [
     {
       contextId: 1,
-      dimId: 1,
+      id: 1,
       title: 'Dim 1'
     },
     {
       contextId: 1,
-      dimId: 2,
+      id: 2,
       title: 'Dim 2'
     },
     {
       contextId: 2,
-      dimId: 3,
+      id: 3,
       title: 'Dim 3'
     }
   ];
-}
+};
 
 export const getFilters = () => {
   return [
@@ -78,4 +78,4 @@ export const getFilters = () => {
       title: 'Filter 8'
     }
   ];
-}
+};
