@@ -3,7 +3,7 @@
 
 // redux toolkit - все кроме slice
 
-function getContexts() {
+export default function getContexts() {
   return [
     {
       contextId: 1,
@@ -16,7 +16,7 @@ function getContexts() {
   ];
 }
 
-function getDimensions() {
+export default function getDimensions() {
   return [
     {
       contextId: 1,
@@ -36,7 +36,7 @@ function getDimensions() {
   ];
 }
 
-function getFilters() {
+export default function getFilters() {
   return [
     {
       dimensionID: 1,
