@@ -1,17 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 import Header from '../Header';
 import ListItem from '../ListItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
-import { getDimensions } from '../../../../app/data';
-import { setDimensions } from '../../../../app/actions';
 
 import './Dropdown.scss';
-import { connect } from 'react-redux';
 
-class Dropdown extends React.PureComponent {
+export default class Dropdown extends React.PureComponent {
   state = {
     isOpened: false
   };
@@ -23,12 +21,21 @@ class Dropdown extends React.PureComponent {
   };
 
   render() {
-    const { header, items } = this.props;
+    const { header, items, checkItem } = this.props;
     const { isOpened } = this.state;
+    let listItems = null;
 
-    const listItems = items.map(item => {
-      return <ListItem key={item.id} name={item.title} />;
-    });
+    if (items) {
+      listItems = items.map(item => {
+        return (
+          <ListItem
+            key={item.id}
+            name={item.title}
+            check={() => checkItem(item.id)}
+          />
+        );
+      });
+    }
 
     return (
       <div className="dropdown">
@@ -46,15 +53,12 @@ class Dropdown extends React.PureComponent {
 }
 
 Dropdown.defaultProps = {
-  header: ''
+  header: '',
+  items: []
 };
 
 Dropdown.propTypes = {
-  header: PropTypes.string
+  header: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.object),
+  checkItem: PropTypes.func
 };
-
-const mapDispatchToProps = {
-  setDimensions
-};
-
-export default connect(null, mapDispatchToProps)(Dropdown);

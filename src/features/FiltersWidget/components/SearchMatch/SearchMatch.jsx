@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 import './SearchMatch.scss';
@@ -22,4 +23,8 @@ export default class SearchMatch extends React.PureComponent {
 
 SearchMatch.defaultProps = {
   className: ''
+};
+
+SearchMatch.propTypes = {
+  className: PropTypes.string
 };

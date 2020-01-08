@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 import ListItem from '../ListItem';
@@ -24,4 +25,8 @@ export default class SearchList extends React.PureComponent {
 
 SearchList.defaultProps = {
   className: ''
+};
+
+SearchList.propTypes = {
+  className: PropTypes.string
 };

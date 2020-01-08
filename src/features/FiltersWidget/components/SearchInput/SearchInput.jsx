@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 import './SearchInput.scss';
@@ -15,4 +16,8 @@ export default class SearchInput extends React.PureComponent {
 
 SearchInput.defaultProps = {
   className: ''
+};
+
+SearchInput.propTypes = {
+  className: PropTypes.string
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
 

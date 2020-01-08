@@ -1,11 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import './Filter.scss';
+
+import { getContexts, getDimensions, getFilters } from '../../../../app/data';
 
 import FilterHeader from '../FilterHeader';
 import FilterBody from '../FilterBody';
 
-import './Filter.scss';
-
 export default class Filter extends React.PureComponent {
+  componentDidMount() {
+    const { getData } = this.props;
+    getData(getContexts(), getDimensions(), getFilters());
+  }
+
   render() {
     return (
       <div className="filter">
@@ -15,3 +23,7 @@ export default class Filter extends React.PureComponent {
     );
   }
 }
+
+Filter.propTypes = {
+  getData: PropTypes.func
+};

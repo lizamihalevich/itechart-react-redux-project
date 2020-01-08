@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 import SearchPanel from '../SearchPanel';
@@ -27,4 +28,8 @@ export default class Search extends React.PureComponent {
 
 Search.defaultProps = {
   className: ''
+};
+
+Search.propTypes = {
+  className: PropTypes.string
 };

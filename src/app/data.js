@@ -1,4 +1,4 @@
-//TODO: getContexts(), getDimensions(),       getFilters()
+// TODO: getContexts(), getDimensions(),       getFilters()
 //  id title         id title contextId     id title dimensionID
 
 // redux toolkit - все кроме slice
@@ -44,37 +44,37 @@ export const getFilters = () => {
     },
     {
       dimensionID: 1,
-      filterId: 2,
+      id: 2,
       title: 'Filter 2'
     },
     {
       dimensionID: 2,
-      filterId: 3,
+      id: 3,
       title: 'Filter 3'
     },
     {
       dimensionID: 2,
-      filterId: 4,
+      id: 4,
       title: 'Filter 4'
     },
     {
       dimensionID: 2,
-      filterId: 5,
+      id: 5,
       title: 'Filter 5'
     },
     {
       dimensionID: 3,
-      filterId: 6,
+      id: 6,
       title: 'Filter 6'
     },
     {
       dimensionID: 3,
-      filterId: 7,
+      id: 7,
       title: 'Filter 7'
     },
     {
       dimensionID: 3,
-      filterId: 8,
+      id: 8,
       title: 'Filter 8'
     }
   ];

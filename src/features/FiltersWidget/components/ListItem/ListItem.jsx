@@ -17,17 +17,17 @@ export default class ListItem extends React.PureComponent {
   };
 
   handleCheckboxCLick = () => {
-    this.props.onClick({ checked: !this.props.checked });
+    const { onClick, checked } = this.props;
+    onClick({ checked: !checked });
   };
 
   render() {
-    const { name, key } = this.props;
+    const { name } = this.props;
     const { isChecked } = this.state;
 
     return (
       <div className="list-item" onClick={this.handleClick}>
         <ListItemCheckbox
-          key={key}
           checked={isChecked}
           onClick={this.handleCheckboxCLick}
         />
@@ -40,5 +40,7 @@ export default class ListItem extends React.PureComponent {
 }
 
 ListItem.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  checked: PropTypes.bool
 };
