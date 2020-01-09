@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import PanelOffset from '../Offset';
 import FilterBodyDropdown from '../FilterBodyDropdown';
@@ -8,9 +7,19 @@ import FilterBodySearchList from '../FilterBodySearchList';
 
 import './FilterBody.scss';
 
-class FilterBody extends React.PureComponent {
+export default class FilterBody extends React.PureComponent {
   render() {
-    const { contexts, dimensions } = this.props;
+    const {
+      contexts,
+      dimensions,
+      filters,
+      selectedContextIds,
+      selectedDimensionIds,
+      selectedFilterIds,
+      checkContext,
+      checkDimension,
+      checkFilter
+    } = this.props;
     const filterInfo = 'FilterInfo random text random text random text';
     return (
       <div className="filter-body">
@@ -18,13 +27,21 @@ class FilterBody extends React.PureComponent {
           filterName="Contexts"
           filterInfo={filterInfo}
           items={contexts}
+          selectedItemIds={selectedContextIds}
+          checkItem={checkContext}
         />
         <FilterBodyDropdown
           filterName="Dimensions"
           filterInfo={filterInfo}
           items={dimensions}
+          selectedItemIds={selectedDimensionIds}
+          checkItem={checkDimension}
         />
-        <FilterBodySearchList />
+        <FilterBodySearchList
+          items={filters}
+          selectedItemIds={selectedFilterIds}
+          checkItem={checkFilter}
+        />
         <PanelOffset className="filter-body__footer" />
       </div>
     );
@@ -32,15 +49,30 @@ class FilterBody extends React.PureComponent {
 }
 
 FilterBody.propTypes = {
-  contexts: PropTypes.arrayOf(PropTypes.object),
-  dimensions: PropTypes.arrayOf(PropTypes.object)
+  contexts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string
+    })
+  ),
+  dimensions: PropTypes.arrayOf(
+    PropTypes.shape({
+      contextId: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string
+    })
+  ),
+  filters: PropTypes.arrayOf(
+    PropTypes.shape({
+      dimensionID: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string
+    })
+  ),
+  selectedContextIds: PropTypes.arrayOf(PropTypes.number),
+  selectedDimensionIds: PropTypes.arrayOf(PropTypes.number),
+  selectedFilterIds: PropTypes.arrayOf(PropTypes.number),
+  checkContext: PropTypes.func,
+  checkDimension: PropTypes.func,
+  checkFilter: PropTypes.func
 };
-
-const mapStateToProps = state => {
-  return {
-    contexts: state.filtersWidget.contexts,
-    dimensions: state.filtersWidget.dimensions
-  };
-};
-
-export default connect(mapStateToProps)(FilterBody);

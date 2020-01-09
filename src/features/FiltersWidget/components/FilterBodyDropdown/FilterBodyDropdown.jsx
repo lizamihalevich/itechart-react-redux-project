@@ -8,11 +8,22 @@ import PanelOffset from '../Offset';
 
 export default class FilterBodyDropdown extends React.PureComponent {
   render() {
-    const { filterName, filterInfo, items } = this.props;
+    const {
+      filterName,
+      filterInfo,
+      items,
+      selectedItemIds,
+      checkItem
+    } = this.props;
     return (
       <PanelOffset>
         <div className="filter-body-element-dropdown">
-          <Dropdown header={filterName} items={items} />
+          <Dropdown
+            header={filterName}
+            items={items}
+            selectedItemIds={selectedItemIds}
+            checkItem={checkItem}
+          />
           <p className="filter-body-element-dropdown__info">{filterInfo}</p>
         </div>
       </PanelOffset>
@@ -23,7 +34,9 @@ export default class FilterBodyDropdown extends React.PureComponent {
 FilterBodyDropdown.propTypes = {
   filterName: PropTypes.string,
   filterInfo: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.object)
+  items: PropTypes.arrayOf(PropTypes.object),
+  selectedItemIds: PropTypes.arrayOf(PropTypes.number),
+  checkItem: PropTypes.func
 };
 
 FilterBodyDropdown.defaultProps = {

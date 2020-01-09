@@ -21,7 +21,7 @@ export default class Dropdown extends React.PureComponent {
   };
 
   render() {
-    const { header, items, checkItem } = this.props;
+    const { header, items, selectedItemIds, checkItem } = this.props;
     const { isOpened } = this.state;
     let listItems = null;
 
@@ -31,7 +31,8 @@ export default class Dropdown extends React.PureComponent {
           <ListItem
             key={item.id}
             name={item.title}
-            check={() => checkItem(item.id)}
+            onClick={() => checkItem(item.id)}
+            isChecked={selectedItemIds.includes(item.id)}
           />
         );
       });
@@ -59,6 +60,11 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
   header: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.object),
-  checkItem: PropTypes.func
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.any.isRequired
+    })
+  ),
+  checkItem: PropTypes.func,
+  selectedItemIds: PropTypes.arrayOf(PropTypes.number)
 };

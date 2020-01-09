@@ -39,7 +39,7 @@ export const getFilters = () => {
   return [
     {
       dimensionID: 1,
-      filterId: 1,
+      id: 1,
       title: 'Filter 1'
     },
     {

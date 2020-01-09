@@ -6,34 +6,13 @@ import ListItemCheckbox from '../ListItemCheckbox';
 import './ListItem.scss';
 
 export default class ListItem extends React.PureComponent {
-  state = {
-    isChecked: false
-  };
-
-  handleClick = () => {
-    this.setState(state => ({
-      isChecked: !state.isChecked
-    }));
-  };
-
-  handleCheckboxCLick = () => {
-    const { onClick, checked } = this.props;
-    onClick({ checked: !checked });
-  };
-
   render() {
-    const { name } = this.props;
-    const { isChecked } = this.state;
+    const { name, onClick, isChecked } = this.props;
 
     return (
-      <div className="list-item" onClick={this.handleClick}>
-        <ListItemCheckbox
-          checked={isChecked}
-          onClick={this.handleCheckboxCLick}
-        />
-        <span className="list-item__name" onClick={this.handleCheckboxClick}>
-          {name}
-        </span>
+      <div className="list-item" onClick={onClick}>
+        <ListItemCheckbox checked={isChecked} />
+        <span className="list-item__name">{name}</span>
       </div>
     );
   }
@@ -42,5 +21,5 @@ export default class ListItem extends React.PureComponent {
 ListItem.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  checked: PropTypes.bool
+  isChecked: PropTypes.bool
 };

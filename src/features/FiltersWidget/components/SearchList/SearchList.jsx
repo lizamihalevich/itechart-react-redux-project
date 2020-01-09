@@ -8,18 +8,28 @@ import './SearchList.scss';
 
 export default class SearchList extends React.PureComponent {
   render() {
-    const { className } = this.props;
+    const { className, items, selectedItemIds, checkItem } = this.props;
+    let searchListItems = null;
 
     const searchListClassName = classNames(className, {
       'search-list': true
     });
-    return (
-      <ul className={searchListClassName}>
-        <ListItem className="search-list__item" name="test1" />
-        <ListItem className="search-list__item" name="test2" />
-        <ListItem className="search-list__item" name="test3" />
-      </ul>
-    );
+
+    if (items) {
+      searchListItems = items.map(item => {
+        return (
+          <ListItem
+            key={item.id}
+            className="search-list__item"
+            name={item.title}
+            onClick={() => checkItem(item.id)}
+            isChecked={selectedItemIds.includes(item.id)}
+          />
+        );
+      });
+    }
+
+    return <ul className={searchListClassName}>{searchListItems}</ul>;
   }
 }
 
@@ -28,5 +38,8 @@ SearchList.defaultProps = {
 };
 
 SearchList.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.object),
+  checkItem: PropTypes.func,
+  selectedItemIds: PropTypes.arrayOf(PropTypes.number)
 };
