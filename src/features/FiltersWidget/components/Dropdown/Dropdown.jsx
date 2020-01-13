@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +24,7 @@ export default class Dropdown extends React.PureComponent {
   render() {
     const { header, items, selectedItemIds, checkItem } = this.props;
     const { isOpened } = this.state;
+    const className = classNames('dropdown', { 'dropdown_unclickable': items.length === 0 });
     let listItems = null;
 
     if (items) {
@@ -39,7 +41,7 @@ export default class Dropdown extends React.PureComponent {
     }
 
     return (
-      <div className="dropdown">
+      <div className={className}>
         <FontAwesomeIcon
           className="dropdown__icon"
           icon={isOpened ? faChevronUp : faChevronDown}

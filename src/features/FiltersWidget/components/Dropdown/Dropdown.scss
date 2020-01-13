@@ -3,6 +3,12 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+
+  &_unclickable {
+    color: grey;
+    pointer-events: none;
+  }
+
   &__panel {
     position: absolute;
     top: 40px;
@@ -14,6 +20,7 @@
     border-top: 5px solid #2178c4;
     padding-left: 10px;
   }
+
   &__icon {
     margin: 0 15px;
     font-size: 12px;
