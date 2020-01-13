@@ -35,6 +35,11 @@ const checkContext = createAction('CHECK_CONTEXT');
 const checkDimension = createAction('CHECK_DIMENSION');
 const checkFilter = createAction('CHECK_FILTER');
 
+const setSearchString = createAction('SET_SEARCH_STRING');
+
+const setSortType = createAction('SET_SORT_TYPE');
+const setSearchType = createAction('SET_SEARCH_TYPE');
+
 export {
   getData,
   setDimensions,
@@ -44,5 +49,8 @@ export {
   checkItem,
   checkContext,
   checkDimension,
-  checkFilter
+  checkFilter,
+  setSearchString,
+  setSearchType,
+  setSortType
 };

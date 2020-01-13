@@ -6,11 +6,17 @@ import './SearchInput.scss';
 
 export default class SearchInput extends React.PureComponent {
   render() {
-    const { className } = this.props;
+    const { className, setSearchString } = this.props;
     const inputClassName = classNames(className, {
       'search-input': true
     });
-    return <input className={inputClassName} type="text" />;
+    return (
+      <input
+        className={inputClassName}
+        type="text"
+        onChange={e => setSearchString(e.target.value)}
+      />
+    );
   }
 }
 
@@ -19,5 +25,6 @@ SearchInput.defaultProps = {
 };
 
 SearchInput.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  setSearchString: PropTypes.func
 };

@@ -24,7 +24,9 @@ export default class Dropdown extends React.PureComponent {
   render() {
     const { header, items, selectedItemIds, checkItem } = this.props;
     const { isOpened } = this.state;
-    const className = classNames('dropdown', { 'dropdown_unclickable': items.length === 0 });
+    const className = classNames('dropdown', {
+      dropdown_unclickable: items.length === 0
+    });
     let listItems = null;
 
     if (items) {

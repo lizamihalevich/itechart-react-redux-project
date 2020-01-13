@@ -2,17 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
+import { ASCENDING, DESCENDING } from '../../constants';
 import './SearchSort.scss';
 
 export default class SearchSort extends React.PureComponent {
+  handleClick = () => {
+    const { setSortType, sortType } = this.props;
+    const type = sortType === ASCENDING ? DESCENDING : ASCENDING;
+    setSortType(type);
+  };
+
   render() {
-    const { range, className } = this.props;
+    const { sortType, className } = this.props;
 
     const searchSortClassName = classNames(className, {
       'search-sort': true
     });
+
+    const range = sortType === ASCENDING ? 'A-Z' : 'Z-A';
     return (
-      <button type="button" className={searchSortClassName}>
+      <button
+        type="button"
+        className={searchSortClassName}
+        onClick={this.handleClick}
+      >
         {range}
       </button>
     );
@@ -20,11 +33,11 @@ export default class SearchSort extends React.PureComponent {
 }
 
 SearchSort.defaultProps = {
-  range: 'A-Z',
   className: ''
 };
 
 SearchSort.propTypes = {
   className: PropTypes.string,
-  range: PropTypes.string
+  sortType: PropTypes.string,
+  setSortType: PropTypes.func
 };

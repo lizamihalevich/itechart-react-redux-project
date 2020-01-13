@@ -10,16 +10,32 @@ import './Search.scss';
 
 export default class Search extends React.PureComponent {
   render() {
-    const { className } = this.props;
+    const {
+      className,
+      setSearchType,
+      setSearchString,
+      setSortType,
+      sortType
+    } = this.props;
     const searchClassName = classNames(className, {
       search: true
     });
     return (
       <div className={searchClassName}>
-        <SearchPanel className="search__search-panel" />
+        <SearchPanel
+          className="search__search-panel"
+          setSearchString={setSearchString}
+        />
         <div className="search__buttons">
-          <SearchMatch className="search__match" />
-          <SearchSort className="search__search-sort" range="A-Z" />
+          <SearchMatch
+            className="search__match"
+            setSearchType={setSearchType}
+          />
+          <SearchSort
+            className="search__search-sort"
+            sortType={sortType}
+            setSortType={setSortType}
+          />
         </div>
       </div>
     );
@@ -31,5 +47,9 @@ Search.defaultProps = {
 };
 
 Search.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  setSearchString: PropTypes.func,
+  setSortType: PropTypes.func,
+  setSearchType: PropTypes.func,
+  sortType: PropTypes.string
 };

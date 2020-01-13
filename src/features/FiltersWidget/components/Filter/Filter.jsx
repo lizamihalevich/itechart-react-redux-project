@@ -22,7 +22,11 @@ export default class Filter extends React.PureComponent {
       selectedFilterIds,
       checkContext,
       checkDimension,
-      checkFilter
+      checkFilter,
+      setSearchString,
+      setSearchType,
+      setSortType,
+      sortType
     } = this.props;
     return (
       <div className="filter">
@@ -37,6 +41,10 @@ export default class Filter extends React.PureComponent {
           checkContext={checkContext}
           checkDimension={checkDimension}
           checkFilter={checkFilter}
+          setSearchString={setSearchString}
+          setSearchType={setSearchType}
+          setSortType={setSortType}
+          sortType={sortType}
         />
       </div>
     );
@@ -60,7 +68,7 @@ Filter.propTypes = {
   ),
   filters: PropTypes.arrayOf(
     PropTypes.shape({
-      dimensionID: PropTypes.number.isRequired,
+      dimensionId: PropTypes.number.isRequired,
       id: PropTypes.number.isRequired,
       title: PropTypes.string
     })
@@ -70,5 +78,9 @@ Filter.propTypes = {
   selectedFilterIds: PropTypes.arrayOf(PropTypes.number),
   checkContext: PropTypes.func,
   checkDimension: PropTypes.func,
-  checkFilter: PropTypes.func
+  checkFilter: PropTypes.func,
+  setSearchString: PropTypes.func,
+  setSearchType: PropTypes.func,
+  setSortType: PropTypes.func,
+  sortType: PropTypes.string
 };

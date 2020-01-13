@@ -18,7 +18,11 @@ export default class FilterBody extends React.PureComponent {
       selectedFilterIds,
       checkContext,
       checkDimension,
-      checkFilter
+      checkFilter,
+      setSearchString,
+      setSortType,
+      setSearchType,
+      sortType
     } = this.props;
     const filterInfo = 'FilterInfo random text random text random text';
     return (
@@ -41,6 +45,10 @@ export default class FilterBody extends React.PureComponent {
           items={filters}
           selectedItemIds={selectedFilterIds}
           checkItem={checkFilter}
+          setSearchType={setSearchType}
+          setSearchString={setSearchString}
+          setSortType={setSortType}
+          sortType={sortType}
         />
         <PanelOffset className="filter-body__footer" />
       </div>
@@ -64,7 +72,7 @@ FilterBody.propTypes = {
   ),
   filters: PropTypes.arrayOf(
     PropTypes.shape({
-      dimensionID: PropTypes.number.isRequired,
+      dimensionId: PropTypes.number.isRequired,
       id: PropTypes.number.isRequired,
       title: PropTypes.string
     })
@@ -74,5 +82,9 @@ FilterBody.propTypes = {
   selectedFilterIds: PropTypes.arrayOf(PropTypes.number),
   checkContext: PropTypes.func,
   checkDimension: PropTypes.func,
-  checkFilter: PropTypes.func
+  checkFilter: PropTypes.func,
+  setSearchString: PropTypes.func,
+  setSortType: PropTypes.func,
+  setSearchType: PropTypes.func,
+  sortType: PropTypes.string
 };

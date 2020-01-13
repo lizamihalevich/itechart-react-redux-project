@@ -6,8 +6,13 @@ import {
   setData,
   checkContext,
   checkDimension,
-  checkFilter
+  checkFilter,
+  setSearchString,
+  setSearchType,
+  setSortType
 } from '../actions';
+
+import { ASCENDING } from '../constants';
 
 const reducer = createReducer(
   {
@@ -17,7 +22,11 @@ const reducer = createReducer(
 
     selectedContextIds: [],
     selectedDimensionIds: [],
-    selectedFilterIds: []
+    selectedFilterIds: [],
+
+    searchString: '',
+    searchType: '',
+    sortType: ASCENDING
   },
   {
     [setData]: (state, action) => {
@@ -64,7 +73,7 @@ const reducer = createReducer(
 
     [selectDimensions]: (state, action) => {
       state.selectedDims = state.dimensions.filter(
-        dim => dim.contextId === action.payload.id // in container
+        dim => dim.contextId === action.payload.id
       );
     },
 
@@ -72,6 +81,18 @@ const reducer = createReducer(
       state.selectedFilters = state.filters.filter(
         filter => filter.dimensionId === action.payload.id
       );
+    },
+
+    [setSearchString]: (state, action) => {
+      state.searchString = action.payload;
+    },
+
+    [setSearchType]: (state, action) => {
+      state.searchType = action.payload;
+    },
+
+    [setSortType]: (state, action) => {
+      state.sortType = action.payload;
     }
   }
 );

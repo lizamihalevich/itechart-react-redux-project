@@ -8,11 +8,25 @@ import PanelOffset from '../Offset';
 
 export default class FilterBodySearchList extends React.PureComponent {
   render() {
-    const { items, selectedItemIds, checkItem } = this.props;
+    const {
+      items,
+      selectedItemIds,
+      checkItem,
+      setSearchString,
+      setSearchType,
+      setSortType,
+      sortType
+    } = this.props;
     return (
       <PanelOffset>
         <div className="filter-body-element-list">
-          <Search className="filter-body-element-list__search" />
+          <Search
+            className="filter-body-element-list__search"
+            setSearchString={setSearchString}
+            setSortType={setSortType}
+            setSearchType={setSearchType}
+            sortType={sortType}
+          />
           <SearchList
             className="filter-body-element-list__search-list"
             items={items}
@@ -28,5 +42,9 @@ export default class FilterBodySearchList extends React.PureComponent {
 FilterBodySearchList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
   selectedItemIds: PropTypes.arrayOf(PropTypes.number),
-  checkItem: PropTypes.func
+  checkItem: PropTypes.func,
+  setSearchString: PropTypes.func,
+  setSortType: PropTypes.func,
+  setSearchType: PropTypes.func,
+  sortType: PropTypes.string
 };

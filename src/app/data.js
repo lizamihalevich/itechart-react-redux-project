@@ -38,44 +38,44 @@ export const getDimensions = () => {
 export const getFilters = () => {
   return [
     {
-      dimensionID: 1,
+      dimensionId: 1,
       id: 1,
-      title: 'Filter 1'
+      title: 'abcd efg'
     },
     {
-      dimensionID: 1,
+      dimensionId: 1,
       id: 2,
-      title: 'Filter 2'
+      title: '34fg'
     },
     {
-      dimensionID: 2,
+      dimensionId: 2,
       id: 3,
-      title: 'Filter 3'
+      title: 'adbvd'
     },
     {
-      dimensionID: 2,
+      dimensionId: 2,
       id: 4,
       title: 'Filter 4'
     },
     {
-      dimensionID: 2,
+      dimensionId: 2,
       id: 5,
-      title: 'Filter 5'
+      title: 'test-filter4'
     },
     {
-      dimensionID: 3,
+      dimensionId: 3,
       id: 6,
-      title: 'Filter 6'
+      title: 'abc defg'
     },
     {
-      dimensionID: 3,
+      dimensionId: 3,
       id: 7,
-      title: 'Filter 7'
+      title: 'Filter test5'
     },
     {
-      dimensionID: 3,
+      dimensionId: 3,
       id: 8,
-      title: 'Filter 8'
+      title: 'fghdfghs'
     }
   ];
 };
