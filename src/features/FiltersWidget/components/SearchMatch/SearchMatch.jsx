@@ -27,6 +27,8 @@ export default class SearchMatch extends React.PureComponent {
         setSearchType(STARTS_WITH);
         break;
       default:
+        setSearchType(EXACT_MATCH);
+        break;
     }
   };
 
