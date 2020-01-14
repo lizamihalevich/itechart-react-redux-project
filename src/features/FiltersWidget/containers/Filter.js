@@ -61,9 +61,13 @@ const chooseFiltersAfterSearch = (filters, searchType, searchString) => {
 
 const chooseFiltersAfterSort = (filters, sortType) => {
   if (sortType === ASCENDING) {
-    return filters.sort();
+    return filters.sort((a, b) =>
+      a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
+    );
   }
-  return filters.sort().reverse();
+  return filters
+    .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
+    .reverse();
 };
 
 const mapStateToProps = state => {

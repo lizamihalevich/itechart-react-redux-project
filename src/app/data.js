@@ -50,7 +50,7 @@ export const getFilters = () => {
     {
       dimensionId: 2,
       id: 3,
-      title: 'adbvd'
+      title: 'adcd fg'
     },
     {
       dimensionId: 2,

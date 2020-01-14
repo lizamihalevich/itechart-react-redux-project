@@ -12,7 +12,7 @@ import {
   setSortType
 } from '../actions';
 
-import { ASCENDING } from '../constants';
+import { ASCENDING, EXACT_MATCH } from '../constants';
 
 const reducer = createReducer(
   {
@@ -25,7 +25,7 @@ const reducer = createReducer(
     selectedFilterIds: [],
 
     searchString: '',
-    searchType: '',
+    searchType: EXACT_MATCH,
     sortType: ASCENDING
   },
   {
