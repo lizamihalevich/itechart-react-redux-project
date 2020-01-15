@@ -23,6 +23,10 @@ export default class Filter extends React.PureComponent {
       checkContext,
       checkDimension,
       checkFilter,
+      addSelectedContext,
+      uncheckContext,
+      uncheckDimension,
+      uncheckFilter,
       setSearchString,
       setSearchType,
       setSortType,
@@ -39,8 +43,12 @@ export default class Filter extends React.PureComponent {
           selectedDimensionIds={selectedDimensionIds}
           selectedFilterIds={selectedFilterIds}
           checkContext={checkContext}
+          uncheckContext={uncheckContext}
           checkDimension={checkDimension}
+          uncheckDimension={uncheckDimension}
           checkFilter={checkFilter}
+          uncheckFilter={uncheckFilter}
+          addSelectedContext={addSelectedContext}
           setSearchString={setSearchString}
           setSearchType={setSearchType}
           setSortType={setSortType}
@@ -79,6 +87,10 @@ Filter.propTypes = {
   checkContext: PropTypes.func,
   checkDimension: PropTypes.func,
   checkFilter: PropTypes.func,
+  uncheckContext: PropTypes.func,
+  uncheckDimension: PropTypes.func,
+  uncheckFilter: PropTypes.func,
+  addSelectedContext: PropTypes.func,
   setSearchString: PropTypes.func,
   setSearchType: PropTypes.func,
   setSortType: PropTypes.func,

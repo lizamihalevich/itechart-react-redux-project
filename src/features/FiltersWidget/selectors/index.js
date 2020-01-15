@@ -49,7 +49,10 @@ const searchedFiltersSelector = createSelector(
 const sortedFiltersSelector = createSelector(
   searchedFiltersSelector,
   sortTypeSelector,
-  (filters, sortType) => filters.sort(sort[sortType])
+  (filters, sortType) => {
+    const res = filters.sort(sort[sortType]);
+    return res;
+  }
 );
 
 export {

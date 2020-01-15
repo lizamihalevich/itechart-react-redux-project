@@ -21,8 +21,16 @@ export default class Dropdown extends React.PureComponent {
     }));
   };
 
+  handleItemClick = id => {
+    const { selectedItemIds, checkItem, uncheckItem } = this.props;
+    if (selectedItemIds.includes(id)) {
+      return uncheckItem(id);
+    }
+    return checkItem(id);
+  };
+
   render() {
-    const { header, items, selectedItemIds, checkItem } = this.props;
+    const { header, items, selectedItemIds } = this.props;
     const { isOpened } = this.state;
     const className = classNames('dropdown', {
       dropdown_unclickable: items.length === 0
@@ -35,7 +43,7 @@ export default class Dropdown extends React.PureComponent {
           <ListItem
             key={item.id}
             name={item.title}
-            onClick={() => checkItem(item.id)}
+            onClick={() => this.handleItemClick(item.id)}
             isChecked={selectedItemIds.includes(item.id)}
           />
         );
@@ -70,5 +78,6 @@ Dropdown.propTypes = {
     })
   ),
   checkItem: PropTypes.func,
+  uncheckItem: PropTypes.func,
   selectedItemIds: PropTypes.arrayOf(PropTypes.number)
 };

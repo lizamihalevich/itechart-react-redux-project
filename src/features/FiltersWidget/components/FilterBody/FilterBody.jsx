@@ -19,6 +19,9 @@ export default class FilterBody extends React.PureComponent {
       checkContext,
       checkDimension,
       checkFilter,
+      uncheckFilter,
+      deleteSelectedContext,
+      deleteSelectedDimension,
       setSearchString,
       setSortType,
       setSearchType,
@@ -33,6 +36,7 @@ export default class FilterBody extends React.PureComponent {
           items={contexts}
           selectedItemIds={selectedContextIds}
           checkItem={checkContext}
+          uncheckItem={deleteSelectedContext}
         />
         <FilterBodyDropdown
           filterName="Dimensions"
@@ -40,11 +44,13 @@ export default class FilterBody extends React.PureComponent {
           items={dimensions}
           selectedItemIds={selectedDimensionIds}
           checkItem={checkDimension}
+          uncheckItem={deleteSelectedDimension}
         />
         <FilterBodySearchList
           items={filters}
           selectedItemIds={selectedFilterIds}
           checkItem={checkFilter}
+          uncheckItem={uncheckFilter}
           setSearchType={setSearchType}
           setSearchString={setSearchString}
           setSortType={setSortType}
@@ -83,6 +89,9 @@ FilterBody.propTypes = {
   checkContext: PropTypes.func,
   checkDimension: PropTypes.func,
   checkFilter: PropTypes.func,
+  deleteSelectedContext: PropTypes.func,
+  deleteSelectedDimension: PropTypes.func,
+  uncheckFilter: PropTypes.func,
   setSearchString: PropTypes.func,
   setSortType: PropTypes.func,
   setSearchType: PropTypes.func,

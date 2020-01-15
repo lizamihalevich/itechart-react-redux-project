@@ -12,6 +12,7 @@ export default class FilterBodySearchList extends React.PureComponent {
       items,
       selectedItemIds,
       checkItem,
+      uncheckItem,
       setSearchString,
       setSearchType,
       setSortType,
@@ -32,6 +33,7 @@ export default class FilterBodySearchList extends React.PureComponent {
             items={items}
             selectedItemIds={selectedItemIds}
             checkItem={checkItem}
+            uncheckItem={uncheckItem}
           />
         </div>
       </PanelOffset>
@@ -43,6 +45,7 @@ FilterBodySearchList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
   selectedItemIds: PropTypes.arrayOf(PropTypes.number),
   checkItem: PropTypes.func,
+  uncheckItem: PropTypes.func,
   setSearchString: PropTypes.func,
   setSortType: PropTypes.func,
   setSearchType: PropTypes.func,

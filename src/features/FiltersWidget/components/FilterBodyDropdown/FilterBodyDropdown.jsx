@@ -13,7 +13,8 @@ export default class FilterBodyDropdown extends React.PureComponent {
       filterInfo,
       items,
       selectedItemIds,
-      checkItem
+      checkItem,
+      uncheckItem
     } = this.props;
     return (
       <PanelOffset>
@@ -23,6 +24,7 @@ export default class FilterBodyDropdown extends React.PureComponent {
             items={items}
             selectedItemIds={selectedItemIds}
             checkItem={checkItem}
+            uncheckItem={uncheckItem}
           />
           <p className="filter-body-element-dropdown__info">{filterInfo}</p>
         </div>
@@ -36,7 +38,8 @@ FilterBodyDropdown.propTypes = {
   filterInfo: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object),
   selectedItemIds: PropTypes.arrayOf(PropTypes.number),
-  checkItem: PropTypes.func
+  checkItem: PropTypes.func,
+  uncheckItem: PropTypes.func
 };
 
 FilterBodyDropdown.defaultProps = {

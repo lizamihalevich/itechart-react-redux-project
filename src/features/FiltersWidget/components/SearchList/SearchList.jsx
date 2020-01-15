@@ -6,9 +6,17 @@ import ListItem from '../ListItem';
 
 import './SearchList.scss';
 
-export default class SearchList extends React.PureComponent {
+export default class SearchList extends React.Component {
+  handleItemClick = id => {
+    const { selectedItemIds, checkItem, uncheckItem } = this.props;
+    if (selectedItemIds.includes(id)) {
+      return uncheckItem(id);
+    }
+    return checkItem(id);
+  };
+
   render() {
-    const { className, items, selectedItemIds, checkItem } = this.props;
+    const { className, items, selectedItemIds } = this.props;
     let searchListItems = null;
 
     const searchListClassName = classNames(className, {
@@ -22,7 +30,7 @@ export default class SearchList extends React.PureComponent {
             key={item.id}
             className="search-list__item"
             name={item.title}
-            onClick={() => checkItem(item.id)}
+            onClick={() => this.handleItemClick(item.id)}
             isChecked={selectedItemIds.includes(item.id)}
           />
         );
@@ -41,5 +49,6 @@ SearchList.propTypes = {
   className: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object),
   checkItem: PropTypes.func,
+  uncheckItem: PropTypes.func,
   selectedItemIds: PropTypes.arrayOf(PropTypes.number)
 };
