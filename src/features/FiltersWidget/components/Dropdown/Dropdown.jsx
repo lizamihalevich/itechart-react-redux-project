@@ -15,6 +15,8 @@ export default class Dropdown extends React.PureComponent {
     isOpened: false
   };
 
+  // useCallback =>
+
   handleClick = () => {
     this.setState(state => ({
       isOpened: !state.isOpened
@@ -28,6 +30,10 @@ export default class Dropdown extends React.PureComponent {
     }
     return checkItem(id);
   };
+
+  // useOutsideClick - возвр ref, прин callback
+  // useEffect
+  // useState
 
   render() {
     const { header, items, selectedItemIds } = this.props;

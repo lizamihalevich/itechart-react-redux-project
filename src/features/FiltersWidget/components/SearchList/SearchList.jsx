@@ -6,7 +6,7 @@ import ListItem from '../ListItem';
 
 import './SearchList.scss';
 
-export default class SearchList extends React.Component {
+export default class SearchList extends React.PureComponent {
   handleItemClick = id => {
     const { selectedItemIds, checkItem, uncheckItem } = this.props;
     if (selectedItemIds.includes(id)) {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Offset.scss';
 
-export default class PanelOffset extends React.Component {
+export default class PanelOffset extends React.PureComponent {
   render() {
     const { children, className } = this.props;
 

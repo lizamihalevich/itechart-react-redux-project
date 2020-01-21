@@ -52,10 +52,16 @@ const reducer = createReducer(
     },
 
     [uncheckDimension]: (state, action) => {
-      const index = state.selectedDimensionIds.findIndex(
-        item => item === action.payload
-      );
-      state.selectedDimensionIds.splice(index, 1);
+      const indices = Array.isArray(action.payload)
+        ? action.payload
+        : [action.payload];
+
+      indices.forEach(id => {
+        const index = state.selectedDimensionIds.findIndex(item => item === id);
+        if (index > -1) {
+          state.selectedDimensionIds.splice(index, 1);
+        }
+      });
     },
 
     [checkFilter]: (state, action) => {
@@ -63,10 +69,16 @@ const reducer = createReducer(
     },
 
     [uncheckFilter]: (state, action) => {
-      const index = state.selectedFilterIds.findIndex(
-        item => item === action.payload
-      );
-      state.selectedFilterIds.splice(index, 1);
+      const indices = Array.isArray(action.payload)
+        ? action.payload
+        : [action.payload];
+
+      indices.forEach(id => {
+        const index = state.selectedFilterIds.findIndex(item => item === id);
+        if (index > -1) {
+          state.selectedFilterIds.splice(index, 1);
+        }
+      });
     },
 
     [setSearchString]: (state, action) => {

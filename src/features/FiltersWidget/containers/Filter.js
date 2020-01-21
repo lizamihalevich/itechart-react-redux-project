@@ -6,10 +6,9 @@ import {
   checkContext,
   checkDimension,
   checkFilter,
-  uncheckContext,
-  uncheckDimension,
   uncheckFilter,
   deleteSelectedContext,
+  deleteSelectedDimension,
   setSearchString,
   setSearchType,
   setSortType
@@ -46,10 +45,9 @@ const mapDispatchToProps = {
   checkContext,
   checkDimension,
   checkFilter,
-  uncheckContext,
-  uncheckDimension,
   uncheckFilter,
   deleteSelectedContext,
+  deleteSelectedDimension,
   getData
 };
 

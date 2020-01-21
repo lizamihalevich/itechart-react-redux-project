@@ -50,8 +50,7 @@ const sortedFiltersSelector = createSelector(
   searchedFiltersSelector,
   sortTypeSelector,
   (filters, sortType) => {
-    const res = filters.sort(sort[sortType]);
-    return res;
+    return filters.sort(sort[sortType]).concat();
   }
 );
 
