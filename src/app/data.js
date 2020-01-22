@@ -20,17 +20,17 @@ export const getDimensions = () => {
     {
       contextId: 1,
       id: 1,
-      title: 'Dim 1'
+      title: 'Dimension 1'
     },
     {
       contextId: 1,
       id: 2,
-      title: 'Dim 2'
+      title: 'Dimension 2'
     },
     {
       contextId: 2,
       id: 3,
-      title: 'Dim 3'
+      title: 'Dimension 3'
     }
   ];
 };

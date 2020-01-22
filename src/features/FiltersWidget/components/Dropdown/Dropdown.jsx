@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -10,39 +10,50 @@ import ListItem from '../ListItem';
 
 import './Dropdown.scss';
 
-export default class Dropdown extends React.PureComponent {
-  state = {
-    isOpened: false
-  };
+const Dropdown = ({
+  selectedItemIds,
+  checkItem,
+  items,
+  header,
+  uncheckItem
+}) => {
+  const [isOpened, setIsOpened] = useState(false);
+  const className = classNames('dropdown', {
+    dropdown_unclickable: items.length === 0
+  });
+  const node = useRef();
 
-  // useCallback =>
+  const handleClick = useCallback(() => {
+    setIsOpened(!isOpened);
+  }, [isOpened]);
 
-  handleClick = () => {
-    this.setState(state => ({
-      isOpened: !state.isOpened
-    }));
-  };
-
-  handleItemClick = id => {
-    const { selectedItemIds, checkItem, uncheckItem } = this.props;
+  const handleItemClick = id => {
     if (selectedItemIds.includes(id)) {
       return uncheckItem(id);
     }
     return checkItem(id);
   };
 
-  // useOutsideClick - возвр ref, прин callback
-  // useEffect
-  // useState
+  const useOutsideClick = (ref, callback) => {
+    const handleRandomClick = e => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        callback();
+      }
+    };
 
-  render() {
-    const { header, items, selectedItemIds } = this.props;
-    const { isOpened } = this.state;
-    const className = classNames('dropdown', {
-      dropdown_unclickable: items.length === 0
+    useEffect(() => {
+      document.addEventListener('click', handleRandomClick);
+
+      return () => {
+        document.removeEventListener('click', handleRandomClick);
+      };
     });
-    let listItems = null;
+  };
 
+  useOutsideClick(node, () => setIsOpened(false));
+
+  const getListItems = () => {
+    let listItems = null;
     if (items) {
       listItems = items.map(item => {
         return (
@@ -50,27 +61,28 @@ export default class Dropdown extends React.PureComponent {
             key={item.id}
             name={item.title}
             className="dropdown__list-item"
-            onClick={() => this.handleItemClick(item.id)}
+            onClick={() => handleItemClick(item.id)}
             isChecked={selectedItemIds.includes(item.id)}
           />
         );
       });
     }
+    return listItems;
+  };
 
-    return (
-      <div className={className}>
-        <FontAwesomeIcon
-          className="dropdown__icon"
-          icon={isOpened ? faChevronUp : faChevronDown}
-          onClick={this.handleClick}
-        />
-        <Header onClick={this.handleClick} headerTitle={header} />
+  return (
+    <div ref={node} className={className}>
+      <FontAwesomeIcon
+        className="dropdown__icon"
+        icon={isOpened ? faChevronUp : faChevronDown}
+        onClick={handleClick}
+      />
+      <Header onClick={handleClick} headerTitle={header} />
 
-        {isOpened && <div className="dropdown__panel">{listItems}</div>}
-      </div>
-    );
-  }
-}
+      {isOpened && <div className="dropdown__panel">{getListItems()}</div>}
+    </div>
+  );
+};
 
 Dropdown.propTypes = {
   header: PropTypes.string,
@@ -88,3 +100,5 @@ Dropdown.defaultProps = {
   header: '',
   items: []
 };
+
+export default Dropdown;
