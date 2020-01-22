@@ -27,12 +27,11 @@ export default class FilterBody extends React.PureComponent {
       setSearchType,
       sortType
     } = this.props;
-    const filterInfo = 'FilterInfo random text random text random text';
+
     return (
       <div className="filter-body">
         <FilterBodyDropdown
           filterName="Contexts"
-          filterInfo={filterInfo}
           items={contexts}
           selectedItemIds={selectedContextIds}
           checkItem={checkContext}
@@ -40,7 +39,6 @@ export default class FilterBody extends React.PureComponent {
         />
         <FilterBodyDropdown
           filterName="Dimensions"
-          filterInfo={filterInfo}
           items={dimensions}
           selectedItemIds={selectedDimensionIds}
           checkItem={checkDimension}

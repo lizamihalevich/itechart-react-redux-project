@@ -1,16 +1,14 @@
 import React from 'react';
 
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import './Header.scss';
 
 export default class Header extends React.PureComponent {
   render() {
     const { headerTitle, onClick, className } = this.props;
 
-    const headerClassName = classNames(className, {
-      header: true
-    });
+    const headerClassName = classNames('header', className);
     return (
       <h2 className={headerClassName} onClick={onClick}>
         {headerTitle}
@@ -20,5 +18,7 @@ export default class Header extends React.PureComponent {
 }
 
 Header.propTypes = {
-  headerTitle: PropTypes.string.isRequired
+  headerTitle: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  className: string
 };

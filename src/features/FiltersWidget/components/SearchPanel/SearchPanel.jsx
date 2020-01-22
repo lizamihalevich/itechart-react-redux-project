@@ -12,9 +12,7 @@ export default class SearchPanel extends React.PureComponent {
   render() {
     const { className, setSearchString } = this.props;
 
-    const searchPanelClassName = classNames(className, {
-      'search-panel': true
-    });
+    const searchPanelClassName = classNames('search-panel', className);
     return (
       <div className={searchPanelClassName}>
         <FontAwesomeIcon className="search-panel__icon" icon={faSearch} />
@@ -27,11 +25,11 @@ export default class SearchPanel extends React.PureComponent {
   }
 }
 
-SearchPanel.defaultProps = {
-  className: ''
-};
-
 SearchPanel.propTypes = {
   className: PropTypes.string,
   setSearchString: PropTypes.func
+};
+
+SearchPanel.defaultProps = {
+  className: ''
 };

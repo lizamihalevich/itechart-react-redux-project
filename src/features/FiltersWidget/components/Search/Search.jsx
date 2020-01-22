@@ -17,9 +17,9 @@ export default class Search extends React.PureComponent {
       setSortType,
       sortType
     } = this.props;
-    const searchClassName = classNames(className, {
-      search: true
-    });
+
+    const searchClassName = classNames('search', className);
+
     return (
       <div className={searchClassName}>
         <SearchPanel
@@ -42,14 +42,14 @@ export default class Search extends React.PureComponent {
   }
 }
 
-Search.defaultProps = {
-  className: ''
-};
-
 Search.propTypes = {
   className: PropTypes.string,
   setSearchString: PropTypes.func,
   setSortType: PropTypes.func,
   setSearchType: PropTypes.func,
   sortType: PropTypes.string
+};
+
+Search.defaultProps = {
+  className: ''
 };

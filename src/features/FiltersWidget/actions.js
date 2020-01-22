@@ -28,10 +28,12 @@ const uncheckDimension = createAction('UNCHECK_DIMENSION');
 const uncheckFilter = createAction('UNCHECK_FILTER');
 
 const deleteSelectedContext = id => (dispatch, getState) => {
-  const deletedDimensionIds = getState()
-    .filtersWidget.dimensions.filter(dimension => dimension.contextId === id)
+  const { filtersWidget } = getState();
+
+  const deletedDimensionIds = filtersWidget.dimensions
+    .filter(dimension => dimension.contextId === id)
     .map(dimension => dimension.id);
-  const deletedFilterIds = getState().filtersWidget.filters.filter(filter =>
+  const deletedFilterIds = filtersWidget.filters.filter(filter =>
     deletedDimensionIds.includes(filter.dimensionId)
   );
 

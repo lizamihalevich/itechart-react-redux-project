@@ -42,7 +42,9 @@ const searchedFiltersSelector = createSelector(
     if (!searchString) {
       return filters;
     }
-    return filters.filter(filter => search[searchType](filter, searchString));
+    return filters.filter(filter =>
+      search[searchType](filter.title, searchString)
+    );
   }
 );
 
@@ -50,7 +52,9 @@ const sortedFiltersSelector = createSelector(
   searchedFiltersSelector,
   sortTypeSelector,
   (filters, sortType) => {
-    return filters.sort(sort[sortType]).concat();
+    return filters
+      .sort((filterA, filterB) => sort[sortType](filterA.title, filterB.title))
+      .concat();
   }
 );
 

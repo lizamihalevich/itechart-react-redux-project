@@ -8,9 +8,7 @@ export default class PanelOffset extends React.PureComponent {
   render() {
     const { children, className } = this.props;
 
-    const panelOffsetClassName = classNames(className, {
-      'panel-offset': true
-    });
+    const panelOffsetClassName = classNames('panel-offset', className);
     return (
       <div className={panelOffsetClassName}>
         <div className="panel-offset__offset" />
@@ -20,11 +18,11 @@ export default class PanelOffset extends React.PureComponent {
   }
 }
 
-PanelOffset.defaultProps = {
-  className: ''
-};
-
 PanelOffset.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node
+};
+
+PanelOffset.defaultProps = {
+  className: ''
 };

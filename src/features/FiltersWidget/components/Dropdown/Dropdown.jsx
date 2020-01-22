@@ -49,6 +49,7 @@ export default class Dropdown extends React.PureComponent {
           <ListItem
             key={item.id}
             name={item.title}
+            className="dropdown__list-item"
             onClick={() => this.handleItemClick(item.id)}
             isChecked={selectedItemIds.includes(item.id)}
           />
@@ -71,11 +72,6 @@ export default class Dropdown extends React.PureComponent {
   }
 }
 
-Dropdown.defaultProps = {
-  header: '',
-  items: []
-};
-
 Dropdown.propTypes = {
   header: PropTypes.string,
   items: PropTypes.arrayOf(
@@ -86,4 +82,9 @@ Dropdown.propTypes = {
   checkItem: PropTypes.func,
   uncheckItem: PropTypes.func,
   selectedItemIds: PropTypes.arrayOf(PropTypes.number)
+};
+
+Dropdown.defaultProps = {
+  header: '',
+  items: []
 };

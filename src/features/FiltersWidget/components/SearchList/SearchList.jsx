@@ -19,9 +19,7 @@ export default class SearchList extends React.PureComponent {
     const { className, items, selectedItemIds } = this.props;
     let searchListItems = null;
 
-    const searchListClassName = classNames(className, {
-      'search-list': true
-    });
+    const searchListClassName = classNames('search-list', className);
 
     if (items) {
       searchListItems = items.map(item => {
@@ -41,14 +39,14 @@ export default class SearchList extends React.PureComponent {
   }
 }
 
-SearchList.defaultProps = {
-  className: ''
-};
-
 SearchList.propTypes = {
   className: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.object),
   checkItem: PropTypes.func,
   uncheckItem: PropTypes.func,
   selectedItemIds: PropTypes.arrayOf(PropTypes.number)
+};
+
+SearchList.defaultProps = {
+  className: ''
 };

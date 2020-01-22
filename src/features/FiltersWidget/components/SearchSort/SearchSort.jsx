@@ -15,9 +15,7 @@ export default class SearchSort extends React.PureComponent {
   render() {
     const { sortType, className } = this.props;
 
-    const searchSortClassName = classNames(className, {
-      'search-sort': true
-    });
+    const searchSortClassName = classNames('search-sort', className);
 
     const range = sortType === ASCENDING ? 'A-Z' : 'Z-A';
     return (
@@ -32,12 +30,12 @@ export default class SearchSort extends React.PureComponent {
   }
 }
 
-SearchSort.defaultProps = {
-  className: ''
-};
-
 SearchSort.propTypes = {
   className: PropTypes.string,
   sortType: PropTypes.string,
   setSortType: PropTypes.func
+};
+
+SearchSort.defaultProps = {
+  className: ''
 };
