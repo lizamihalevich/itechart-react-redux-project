@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
+import useOutsideClick from '../../hooks/useOutsideClick';
 import Header from '../Header';
 import ListItem from '../ListItem';
 
@@ -21,7 +22,6 @@ const Dropdown = ({
   const className = classNames('dropdown', {
     dropdown_unclickable: items.length === 0
   });
-  const node = useRef();
 
   const handleClick = useCallback(() => {
     setIsOpened(!isOpened);
@@ -34,23 +34,7 @@ const Dropdown = ({
     return checkItem(id);
   };
 
-  const useOutsideClick = (ref, callback) => {
-    const handleRandomClick = e => {
-      if (ref.current && !ref.current.contains(e.target)) {
-        callback();
-      }
-    };
-
-    useEffect(() => {
-      document.addEventListener('click', handleRandomClick);
-
-      return () => {
-        document.removeEventListener('click', handleRandomClick);
-      };
-    });
-  };
-
-  useOutsideClick(node, () => setIsOpened(false));
+  const ref = useOutsideClick(() => setIsOpened(false));
 
   const getListItems = () => {
     let listItems = null;
@@ -71,7 +55,7 @@ const Dropdown = ({
   };
 
   return (
-    <div ref={node} className={className}>
+    <div ref={ref} className={className}>
       <FontAwesomeIcon
         className="dropdown__icon"
         icon={isOpened ? faChevronUp : faChevronDown}

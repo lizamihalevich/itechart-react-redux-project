@@ -1,9 +1,9 @@
 import { EXACT_MATCH, PARTIAL_MATCH, STARTS_WITH } from '../constants';
 
 const search = {
-  [EXACT_MATCH]: (filter, searchString) => filter === searchString,
-  [PARTIAL_MATCH]: (filter, searchString) => filter.includes(searchString),
-  [STARTS_WITH]: (filter, searchString) => filter.startsWith(searchString)
+  [EXACT_MATCH]: (item, searchString) => item === searchString,
+  [PARTIAL_MATCH]: (item, searchString) => item.includes(searchString),
+  [STARTS_WITH]: (item, searchString) => item.startsWith(searchString)
 };
 
 export default search;
