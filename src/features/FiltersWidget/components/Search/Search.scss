@@ -1,0 +1,19 @@
+.search {
+  border-bottom: 1px solid #888;
+  &__buttons {
+    margin-left: 26px;
+    margin-bottom: 20px;
+  }
+  &__search-sort {
+    width: 40px;
+    height: 20px;
+  }
+  &__search-panel {
+    margin: 10px auto;
+  }
+  &__match {
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}

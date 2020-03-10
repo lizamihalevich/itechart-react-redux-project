@@ -1,0 +1,10 @@
+.list-item-checkbox {
+  position: relative;
+  &__square {
+    color: #999;
+    font-size: 20px;
+    &_clicked {
+      color: white;
+    }
+  }
+}

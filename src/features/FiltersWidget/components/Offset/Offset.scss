@@ -1,0 +1,11 @@
+.panel-offset {
+  display: flex;
+  border-bottom: 2px solid #888;
+
+  &__offset {
+    width: 50px;
+    background-color: rgb(86, 86, 86);
+    border-right: 2px solid #888;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,24 @@
+.filter-header {
+  display: flex;
+  background-color: rgba(68, 68, 68, 0.904);
+  align-items: center;
+  border-bottom: 3px solid #2178c4;
+
+  &__close-icon {
+    flex-grow: 0;
+    font-size: 15px;
+    color: #888;
+    margin: 0 15px;
+  }
+
+  &__drag-icon {
+    flex-grow: 0;
+    font-size: 20px;
+    color: #888;
+    margin: 0 18px;
+  }
+
+  &__header {
+    width: 100%;
+  }
+}
